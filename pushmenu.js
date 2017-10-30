@@ -12,7 +12,8 @@
 		show : "pm_show",
 		hide : "pm_hide",
 		overlay : "pm_overlay",
-		open : "pm_open"
+		open : "pm_open",
+		close  : 'pm_close-btn',
 	}
 
 	pushMenu.prototype.initialize = function(){
@@ -36,6 +37,10 @@
 
 		this.$body.on('click','.'+_this.classes.overlay, function(){
 			_this.toggleMenu("hide");
+		});
+		
+		this.$body.on('click', '.' + _this.classes.close, function () {
+			_this.toggleMenu('hide');
 		});
 	}
 
